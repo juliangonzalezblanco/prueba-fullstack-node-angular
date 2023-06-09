@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import { generarLlavesRSA } from '../encrypt/RSA';
-import { router } from '../routes/root';
+import { generarLlavesRSA } from '../src/encrypt/RSA';
+import { router } from '../src/routes/root';
 
-const app = express();
+export const app = express();
 app.use(express.json()); //transforma req.body a un json
 app.use(cors());
 
@@ -19,7 +19,5 @@ generarLlavesRSA()
         //almacenamos las llaves en memoria
         llavesRSA = llaves;
         //arrancamos el servidor express
-        app.listen(PORT, () => {
-            console.log(`server arriba en el puerto ${PORT}`);
-        })
+        app.listen(PORT, () => { })
     })
