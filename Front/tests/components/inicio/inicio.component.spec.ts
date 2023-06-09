@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InicioComponent } from './inicio.component';
+import { InicioComponent } from '../../../src/app/components/inicio/inicio.component';
 
 describe('InicioComponent', () => {
   let component: InicioComponent;
@@ -17,7 +17,7 @@ describe('InicioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

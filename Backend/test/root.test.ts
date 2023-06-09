@@ -6,7 +6,7 @@ describe('test api', ()=>{
     test('GET /llaves retorna 200 y no undefined', async () => {
         const response = await request(app).get('/llaves');
         expect(response.status).toBe(200);
-        expect(response.body).not.toBeUndefined();
+        expect(response.body).toBeDefined();
     });
 
     test('POST /escenario retorna 200 y flujo: formulario', async () => {
@@ -15,8 +15,8 @@ describe('test api', ()=>{
         }
         const response = await request(app).post('/escenario').send(body);
         expect(response.status).toBe(200);
-        expect(response.body).not.toBeUndefined();
-        expect(response.body.flujo).not.toBeUndefined();
+        expect(response.body).toBeDefined();
+        expect(response.body.flujo).toBeDefined();
         expect(response.body.flujo).toStrictEqual('formulario');
     });
 
@@ -26,7 +26,7 @@ describe('test api', ()=>{
         }
         const response = await request(app).post('/escenario').send(body);
         expect(response.status).toBe(200);
-        expect(response.body).not.toBeUndefined();
+        expect(response.body).toBeDefined();
         expect(response.body.exitoso).toBeFalsy();
         expect(response.body.mensaje).toStrictEqual('¡DATOS INCORRECTOS!');
     });
@@ -39,7 +39,7 @@ describe('test api', ()=>{
         }
         const response = await request(app).post('/escenario').send(body);
         expect(response.status).toBe(200);
-        expect(response.body).not.toBeUndefined();
+        expect(response.body).toBeDefined();
         expect(response.body.exitoso).toBeTruthy();
         expect(response.body.mensaje).toStrictEqual('¡DATOS RECIBIDOS!');
     });

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormularioComponent } from './formulario.component';
+import { FormularioComponent } from '../../../src/app/components/formulario/formulario.component';
 
 describe('FormularioComponent', () => {
   let component: FormularioComponent;
@@ -17,7 +17,7 @@ describe('FormularioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });
