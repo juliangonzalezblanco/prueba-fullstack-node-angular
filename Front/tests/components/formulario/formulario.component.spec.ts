@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { FormularioComponent } from '../../../src/app/components/formulario/formulario.component';
 import { ApiService } from '../../../src/app/services/api.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('FormularioComponent', () => {
   let component: FormularioComponent;
@@ -10,7 +11,7 @@ describe('FormularioComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FormularioComponent ],
-      imports: [ HttpClientTestingModule ],
+      imports: [ HttpClientTestingModule, ReactiveFormsModule ],
       providers: [ ApiService ]
     })
     .compileComponents();

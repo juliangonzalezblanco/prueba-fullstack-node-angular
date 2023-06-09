@@ -35,7 +35,6 @@ describe('ApiService', () => {
     }
     service.getEscenario(body).subscribe((res:any)=>{
       expect(res).toBeDefined();
-      console.log(res)
       expect(res.flujo).toBeDefined();
       expect(res.flujo).toStrictEqual('formulario');
 
