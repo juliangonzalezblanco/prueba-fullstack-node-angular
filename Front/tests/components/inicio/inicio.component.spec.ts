@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { InicioComponent } from '../../../src/app/components/inicio/inicio.component';
+import { ApiService } from '../../../src/app/services/api.service';
 
 describe('InicioComponent', () => {
   let component: InicioComponent;
@@ -8,7 +9,9 @@ describe('InicioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InicioComponent ]
+      declarations: [ InicioComponent ],
+      imports: [ HttpClientTestingModule ],
+      providers: [ ApiService ]
     })
     .compileComponents();
 

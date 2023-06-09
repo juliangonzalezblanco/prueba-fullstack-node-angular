@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiService } from '../../services/api.service';
 declare var $: any;
 
 @Component({
