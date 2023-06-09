@@ -38,8 +38,8 @@ export class FormularioComponent {
   enviarFormulario(){
     let body = {
       flujo: 'Formulario',
-      numDocumento: this.numDocOrig,
-      nombre: this.formulario.get('nombre')?.value,
+      numDocumento: this.numDocOrig?this.numDocOrig:null,
+      nombre: this.formulario.get('nombre')?.value?this.formulario.get('nombre')?.value:null,
     }
     this._apiService.getEscenario(body).subscribe((res)=>{
       this.respuesta = res;
@@ -57,7 +57,9 @@ export class FormularioComponent {
 
   mascaraBlur(){
     this.numDocOrig = this.formulario.get('numDocumento')?.value;
-    const maskedNumbers = '*'.repeat(this.numDocOrig.length - 2) + this.numDocOrig.substring(this.numDocOrig.length - 2);
-    this.formulario.get('numDocumento')?.setValue(maskedNumbers);
+    if(this.numDocOrig){
+      const maskedNumbers = '*'.repeat(this.numDocOrig.length - 2) + this.numDocOrig.substring(this.numDocOrig.length - 2);
+      this.formulario.get('numDocumento')?.setValue(maskedNumbers);
+    }
   }
 }
